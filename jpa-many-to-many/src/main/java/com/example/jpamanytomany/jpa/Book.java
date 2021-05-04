@@ -3,6 +3,7 @@ package com.example.jpamanytomany.jpa;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.Set;
@@ -30,5 +31,8 @@ public class Book {
         this.name = name;
         this.publishers = Stream.of(publishers).collect(Collectors.toSet());
         this.publishers.forEach(x->x.getBooks().add(this));
+    }
+
+    public Book() {
     }
 }

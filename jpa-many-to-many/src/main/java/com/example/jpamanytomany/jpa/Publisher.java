@@ -2,6 +2,7 @@ package com.example.jpamanytomany.jpa;
 
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.HashSet;
@@ -23,4 +24,6 @@ public class Publisher {
         this.name = name;
     }
 
+    public Publisher() {
+    }
 }
