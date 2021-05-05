@@ -19,14 +19,16 @@ public class ProductAPI {
 
     @GetMapping
     public ResponseEntity<List<Product>> findAll(){
-        return ResponseEntity.ok(productService.fillAll());
+        return ResponseEntity.ok(productService.findAll());
     }
+
     @PostMapping
     public ResponseEntity create(@Valid @RequestBody Product product){
-        return ResponseEntity.ok(productService.saveProduct(product));
+        return ResponseEntity.ok(productService.save(product));
 
     }
-    @GetMapping("/id")
+
+    @GetMapping("/{id}")
     public ResponseEntity<Product> findById(@PathVariable Long id){
         Optional<Product> stock = productService.findById(id);
         if(!stock.isPresent()){
@@ -35,18 +37,18 @@ public class ProductAPI {
         }
         return ResponseEntity.ok(stock.get());
     }
-    @PutMapping("/id")
-    public ResponseEntity<Product>
-    findById(@PathVariable Long id,@Valid @RequestBody Product pro){
+
+    @PutMapping("/{id}")
+    public ResponseEntity<Product> findById(@PathVariable Long id,@Valid @RequestBody Product product){
         Optional<Product> stock = productService.findById(id);
         if(!stock.isPresent()){
             log.error("Id" +id + "is not existed");
             ResponseEntity.badRequest().build();
         }
-        return ResponseEntity.ok(productService.saveProduct(pro));
+        return ResponseEntity.ok(productService.save(product));
     }
 
-    @DeleteMapping
+    @DeleteMapping("/{id}")
     public ResponseEntity delete(@PathVariable Long id){
         Optional<Product> stock = productService.findById(id);
         if(!stock.isPresent()){

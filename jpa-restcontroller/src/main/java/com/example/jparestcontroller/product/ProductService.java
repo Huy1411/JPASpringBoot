@@ -13,16 +13,18 @@ import java.util.Optional;
 public class ProductService {
     private  final ProductRepository productRepository;
 
-    public List<Product> fillAll(){
+    public List<Product> findAll(){
         return productRepository.findAll();
     }
+
     public Optional<Product> findById(Long id){
         return productRepository.findById(id);
     }
 
-    public Product saveProduct(Product stock){
+    public Product save(Product stock){
         return productRepository.save(stock);
     }
+
     public void deleteById(Long id){
         productRepository.deleteById(id);
     }
