@@ -1,16 +1,15 @@
 package com.example.emi_application.controller;
 
 import com.example.emi_application.model.Customer;
+import com.example.emi_application.model.Emi;
 import com.example.emi_application.service.CustomerService;
+import com.example.emi_application.service.EmiService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.WebDataBinder;
-import org.springframework.web.bind.annotation.InitBinder;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -21,6 +20,10 @@ import java.util.List;
 public class CustomerController {
     @Autowired
     private CustomerService customerService;
+
+
+    @Autowired
+    private EmiService emiService;
 
     @InitBinder
     public void InitBinder(WebDataBinder data)
@@ -34,7 +37,7 @@ public class CustomerController {
     {
         List<Customer> list = customerService.getAllCustomer();
         model.addAttribute("list",list);
-        return "customer";
+        return "customerList";
     }
 
     @RequestMapping(path = "/add")
@@ -53,5 +56,14 @@ public class CustomerController {
             return "redirect:/?success=insert success";
         }
         return "redirect:/?error=insert failed";
+    }
+
+    @RequestMapping(path = "emi")
+    public String getEmiByCust(@RequestParam("id")Long custId, Model model)
+    {
+        List<Emi> list = emiService.getEmiByCust(custId);
+        model.addAttribute("listEmi",list);
+
+        return "getEmiById";
     }
 }

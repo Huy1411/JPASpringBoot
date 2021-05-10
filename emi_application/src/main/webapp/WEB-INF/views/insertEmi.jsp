@@ -13,7 +13,7 @@
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container">
-        <a class="navbar-brand" href="#">Enterprise Application</a>
+        <a class="navbar-brand" href="#">EMI APPLICATION</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -24,35 +24,39 @@
 <div class="container">
     <div class="row">
         <div class="col-md-6 col-md-offset-3">
-            <h1> Create New User</h1>
+            <h1> Create New EMI</h1>
             <%--@elvariable id="emiNew" type=""--%>
             <form:form action="${pageContext.request.contextPath}/emi/saveEmi" method="post" modelAttribute="emiNew">
                 <div class="form-group">
-
+                    <label >Customer Name </label>
                     <form:select class="custom-select" path="customer.cust_id">
                         <form:options items="${listCust}"  itemLabel="fullName" itemValue="cust_id" />
                     </form:select>
                 </div>
                 <div class="form-group">
-                    <label > employee Name :</label>
-                    <form:input type="text" class="form-control" path="employeeName" placeholder="Enter address" />
+                    <label > Employee Name </label>
+                    <form:input type="text" class="form-control" path="employeeName" placeholder="Enter employee name" />
                 </div>
                 <div class="form-group">
-                    <label > loan amount :</label>
-                    <form:input type="number" class="form-control"  path="loan_amount" placeholder="Enter loan amount" autofocus="autofocus"/>
+                    <label > Loan Amount </label>
+                    <form:input type="text" class="form-control"  path="loan_amount" placeholder="Enter loan amount" autofocus="autofocus"/>
                 </div>
                 <div class="form-group">
-                    <label > rate of interest :</label>
-                    <form:input type="number" class="form-control" path="rate_of_interest" placeholder="Enter rate of interest" autofocus="autofocus"/>
+                    <label > Rate Of Interest </label>
+                    <form:input type="text" class="form-control" path="rate_of_interest" placeholder="Enter rate of interest" autofocus="autofocus"/>
                 </div>
                 <div class="form-group">
-                    <label > team of the loan :</label>
+                    <label >Team Of The Loan </label>
                     <form:input type="text" class="form-control"  path="team_of_the_loan" placeholder="Enter team of the loan" autofocus="autofocus"/>
+                </div>
+                <div class="form-group">
+                    <label >Time End </label>
+                    <form:input type="date" class="form-control" path="timeEnd" placeholder="Enter time end" autofocus="autofocus"/>
                 </div>
                 <div class="form-group">
                     <div class="row">
                         <div class="col-sm-6 ">
-                            <input type="submit" name="login-submit" id="Login-submit" class="form-control btn btn-success" value="Save" >
+                            <input type="submit" name="login-submit" id="Login-submit" class="form-control btn btn-success" value="Submit" >
                         </div>
                     </div>
                 </div>

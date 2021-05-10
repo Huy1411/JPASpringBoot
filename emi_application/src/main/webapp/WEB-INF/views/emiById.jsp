@@ -7,13 +7,13 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Enterprise Application</title>
+    <title>Insert title here</title>
     <link type="text/css" rel="stylesheet" href="<c:url value="webjars/bootstrap/4.3.1/css/bootstrap.css"/> ">
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container">
-        <a class="navbar-brand" href="#">Enterprise Application</a>
+        <a class="navbar-brand" href="#">Navbar</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -22,31 +22,35 @@
 <br>
 <br>
 <div class="container">
-    <a class="btn btn-success" href="<%=request.getContextPath()%>/emi">Create new EMI</a><br>
+    <a class="btn btn-success" href="<%=request.getContextPath()%>/">Back</a><br>
     <div class="col-md-12 col-md-offset-0 mt-2">
         <div class="row ">
             <table class="table table-active">
                 <thead class="thead-dark">
                 <tr>
                     <th>Name</th>
-                    <th>Address</th>
-                    <th>Phone</th>
-                    <th>CCCD</th>
-                    <th>Amount</th>
+                    <th>Loan Amout</th>
+                    <th>Rate of interest</th>
+                    <th>Team of the loan</th>
+                    <th>Status</th>
+                    <th>Time End</th>
+                    <th>Created At</th>
                     <th>Action</th>
                 </tr>
                 </thead>
                 <tbody>
-                <c:forEach items="${list}" var="user">
+                <c:forEach items="${listEmi}" var="emi">
                     <tr>
-                        <td>${user.fullName}</td>
-                        <td>${user.address}</td>
-                        <td>${user.phoneNumber}</td>
-                        <td>${user.CCCD}</td>
-                        <td>${user.amount}</td>
+                        <td>${emi.customer.fullName}</td>
+                        <td>${emi.loan_amount}</td>
+                        <td>${emi.rate_of_interest}</td>
+                        <td>${emi.team_of_the_loan}</td>
+                        <td>${emi.status}</td>
+                        <td>${emi.timeEnd}</td>
+                        <td>${emi.createdAt}</td>
+                        <td>${emi.updateAt}</td>
                         <td>
-                            <a class="btn btn-primary" href="<%=request.getContextPath()%>/user/edit?id=${user.cust_id}">Edit</a>
-                            <a class="btn btn-danger" href="<%=request.getContextPath()%>/user/delete?id=${user.cust_id}">Delete</a>
+                            <a class="btn btn-primary" href="<%=request.getContextPath()%>/emi/detail?id=${emi.emi_id}">Detail</a>
                         </td>
                     </tr>
                 </c:forEach>
@@ -56,7 +60,6 @@
         </div>
 
     </div>
-    <a class="btn btn-success" href="<%=request.getContextPath()%>/add">Create new customer</a>
 </div>
 
 

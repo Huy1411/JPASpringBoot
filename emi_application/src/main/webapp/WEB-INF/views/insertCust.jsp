@@ -13,7 +13,7 @@
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container">
-        <a class="navbar-brand" href="#">Enterprise Application</a>
+        <a class="navbar-brand" href="#">EMI APPLICATION</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -24,33 +24,33 @@
 <div class="container">
     <div class="row">
         <div class="col-md-6 col-md-offset-3">
-            <h1> Create New EMI</h1>
+            <h1> Create New Customer</h1>
             <%--@elvariable id="custNew" type=""--%>
             <form:form action="${pageContext.request.contextPath}/saveCust" method="post" modelAttribute="custNew">
                 <div class="form-group">
-                    <label > name:</label>
+                    <label > Name</label>
                     <form:input type="text" class="form-control"  path="fullName" placeholder="Enter name" />
                 </div>
                 <div class="form-group">
-                    <label > address :</label>
+                    <label > Address</label>
                     <form:input type="text" class="form-control" path="address" placeholder="Enter address" />
                 </div>
                 <div class="form-group">
-                    <label > Phone :</label>
-                    <form:input type="number" class="form-control"  path="phoneNumber" placeholder="Enter phone" autofocus="autofocus"/>
+                    <label > Phone</label>
+                    <form:input type="text" class="form-control"  path="phoneNumber" placeholder="Enter phone" autofocus="autofocus"/>
                 </div>
                 <div class="form-group">
-                    <label > CCCD :</label>
-                    <form:input type="number" class="form-control" path="CCCD" placeholder="Enter CCCD" autofocus="autofocus"/>
+                    <label > Identification</label>
+                    <form:input type="text" class="form-control" path="CCCD" placeholder="Enter CCCD" autofocus="autofocus"/>
                 </div>
                 <div class="form-group">
-                    <label > amount :</label>
+                    <label > Amount</label>
                     <form:input type="text" class="form-control"  path="amount" placeholder="Enter amount" autofocus="autofocus"/>
                 </div>
                 <div class="form-group">
                     <div class="row">
                         <div class="col-sm-6 ">
-                            <input type="submit" name="login-submit" id="Login-submit" class="form-control btn btn-success" value="Save" >
+                            <input type="submit" name="login-submit" id="Login-submit" class="form-control btn btn-success" value="Submit" >
                         </div>
                     </div>
                 </div>

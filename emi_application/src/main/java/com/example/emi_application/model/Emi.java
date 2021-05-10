@@ -20,10 +20,13 @@ public class Emi {
     private double emi_total;
     private String status;
 
+
+
     @CreationTimestamp
     private Date createdAt;
     @UpdateTimestamp
     private Date updatedAt;
+    private Date timeEnd;
 
     @ManyToOne
     @JoinColumn(name = "cust_id", referencedColumnName = "cust_id")
