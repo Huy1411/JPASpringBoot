@@ -7,13 +7,13 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Insert title here</title>
+    <title>Enterprise Application</title>
     <link type="text/css" rel="stylesheet" href="<c:url value="webjars/bootstrap/4.3.1/css/bootstrap.css"/> ">
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container">
-        <a class="navbar-brand" href="#">Navbar</a>
+        <a class="navbar-brand" href="#">EMI APPLICATION</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -29,7 +29,7 @@
                 <thead class="thead-dark">
                 <tr>
                     <th>Name</th>
-                    <th>Loan Amout</th>
+                    <th>Loan Amount</th>
                     <th>Rate of interest</th>
                     <th>Team of the loan</th>
                     <th>Status</th>

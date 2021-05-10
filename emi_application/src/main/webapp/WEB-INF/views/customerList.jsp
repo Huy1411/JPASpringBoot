@@ -22,7 +22,7 @@
 <br>
 <br>
 <div class="container">
-    <a class="btn btn-success" href="<%=request.getContextPath()%>/emi/">Create new EMI</a><br>
+    <a class="btn btn-success" href="<%=request.getContextPath()%>/emi/">Create New EMI</a><br>
     <div class="col-md-12 col-md-offset-0 mt-2">
         <div class="row ">
             <table class="table table-active">
@@ -31,7 +31,7 @@
                     <th>Name</th>
                     <th>Address</th>
                     <th>Phone</th>
-                    <th>CCCD</th>
+                    <th>Identification</th>
                     <th>Amount</th>
                     <th>Action</th>
                 </tr>
@@ -57,7 +57,7 @@
         </div>
 
     </div>
-    <a class="btn btn-success" href="<%=request.getContextPath()%>/add">Create new Customer</a>
+    <a class="btn btn-success" href="<%=request.getContextPath()%>/add">Create New Customer</a>
 </div>
 
 <script type="text/javascript" src="<c:url value="webjars/jquery/1.9.1/jquery.min.js"/> "></script>

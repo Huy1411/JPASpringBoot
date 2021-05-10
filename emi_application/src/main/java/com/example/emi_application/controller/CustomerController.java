@@ -18,9 +18,9 @@ import java.util.List;
 @Controller
 @RequestMapping(path = "")
 public class CustomerController {
+
     @Autowired
     private CustomerService customerService;
-
 
     @Autowired
     private EmiService emiService;

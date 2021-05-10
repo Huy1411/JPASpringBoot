@@ -26,6 +26,7 @@ public class Emi {
     private Date createdAt;
     @UpdateTimestamp
     private Date updatedAt;
+
     private Date timeEnd;
 
     @ManyToOne

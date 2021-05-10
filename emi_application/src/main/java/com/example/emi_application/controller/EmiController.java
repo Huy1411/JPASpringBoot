@@ -2,7 +2,6 @@ package com.example.emi_application.controller;
 
 import com.example.emi_application.model.Customer;
 import com.example.emi_application.model.Emi;
-import com.example.emi_application.repository.CustomerRepository;
 import com.example.emi_application.service.CustomerService;
 import com.example.emi_application.service.EmiService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -47,7 +46,7 @@ public class EmiController {
         boolean bl = emiService.saveEmi(emi);
         if (bl)
         {
-            return "redirect:/?success=insert success\"";
+            return "redirect:/?success=insert success";
         }
         return "redirect:/emi?error=insert failed";
     }

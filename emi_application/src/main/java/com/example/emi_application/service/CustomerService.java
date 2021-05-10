@@ -5,6 +5,7 @@ import com.example.emi_application.model.Customer;
 import java.util.List;
 
 public interface CustomerService {
+
     List<Customer> getAllCustomer();
     boolean saveCustomer(Customer customer);
     boolean updateCustomer(Customer customer);

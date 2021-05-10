@@ -7,6 +7,7 @@ import org.springframework.data.jpa.repository.Query;
 import java.util.List;
 
 public interface EmiRepository extends JpaRepository<Emi, Long> {
+
     @Query("SELECT p FROM Emi p WHERE cust_id=?1")
     List<Emi> getEmiByCust(Long cust_id);
 }
