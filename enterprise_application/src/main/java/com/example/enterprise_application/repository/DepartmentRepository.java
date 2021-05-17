@@ -1,9 +1,14 @@
 package com.example.enterprise_application.repository;
 
-import com.example.enterprise_application.jpa.core.Department;
+import com.example.enterprise_application.jpa.Department;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.rest.core.annotation.RepositoryRestResource;
+import org.springframework.data.jpa.repository.Query;
 
-@RepositoryRestResource
-public interface DepartmentRepository extends JpaRepository<Department, Integer> {
+public interface DepartmentRepository extends JpaRepository<Department, Integer>{
+    @Query("SELECT c FROM Department c")
+    Page<Department> findPaginateDepartments(Pageable pageable);
 }
+
+

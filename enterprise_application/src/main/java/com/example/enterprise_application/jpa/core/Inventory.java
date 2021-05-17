@@ -1,38 +1,57 @@
 package com.example.enterprise_application.jpa.core;
 
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+
+
 
 import javax.persistence.*;
 
-@Getter
-@Setter
-@NoArgsConstructor
 @Entity
 @Table(name = "Inventory")
 public class Inventory {
-
-    @EmbeddedId
-    private InventoryID id;
-
-    @ManyToOne
-    @MapsId("wareHouseId")
-    @JoinColumn(name = "wareHouseId")
-    private WareHouse wareHouse;
-
-    @ManyToOne
-    @MapsId("productId")
-    @JoinColumn(name = "productId")
-    private ProductInformation product;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int inventoryId;
 
     @Column(name = "qtyOnHand")
     private int qtyOnHand;
 
-    public Inventory(WareHouse wareHouse, ProductInformation product, int qtyOnHand) {
-        this.id = new InventoryID(wareHouse.getId(),product.getId());
-        this.wareHouse = wareHouse;
-        this.product = product;
+    @ManyToOne
+    @JoinColumn(name = "wareHouseId", referencedColumnName = "wareHouseId")
+    private WareHouse wareHouse;
+
+    @ManyToOne
+    @JoinColumn(name = "productId", referencedColumnName = "productId")
+    private Product product;
+
+    public int getInventoryId() {
+        return inventoryId;
+    }
+
+    public void setInventoryId(int inventoryId) {
+        this.inventoryId = inventoryId;
+    }
+
+    public int getQtyOnHand() {
+        return qtyOnHand;
+    }
+
+    public void setQtyOnHand(int qtyOnHand) {
         this.qtyOnHand = qtyOnHand;
+    }
+
+    public WareHouse getWareHouse() {
+        return wareHouse;
+    }
+
+    public void setWareHouse(WareHouse wareHouse) {
+        this.wareHouse = wareHouse;
+    }
+
+    public Product getProduct() {
+        return product;
+    }
+
+    public void setProduct(Product product) {
+        this.product = product;
     }
 }

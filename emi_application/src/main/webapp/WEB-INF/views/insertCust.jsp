@@ -41,11 +41,11 @@
                 </div>
                 <div class="form-group">
                     <label > Identification</label>
-                    <form:input type="text" class="form-control" path="CCCD" placeholder="Enter CCCD" autofocus="autofocus"/>
+                    <form:input type="text" class="form-control" path="identification" placeholder="Enter identification" autofocus="autofocus"/>
                 </div>
                 <div class="form-group">
                     <label > Amount</label>
-                    <form:input type="text" class="form-control"  path="amount" placeholder="Enter amount" autofocus="autofocus"/>
+                    <form:input type="number" class="form-control"  path="amount" placeholder="Enter amount" autofocus="autofocus"/>
                 </div>
                 <div class="form-group">
                     <div class="row">

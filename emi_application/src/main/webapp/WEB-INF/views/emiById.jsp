@@ -50,7 +50,7 @@
                         <td>${emi.createdAt}</td>
                         <td>${emi.updateAt}</td>
                         <td>
-                            <a class="btn btn-primary" href="<%=request.getContextPath()%>/emi/detail?id=${emi.emi_id}">Detail</a>
+                            <a class="btn btn-primary" href="<%=request.getContextPath()%>/emi/detail?id=${emi.emi_id}">DETAIL</a>
                         </td>
                     </tr>
                 </c:forEach>
@@ -61,7 +61,5 @@
 
     </div>
 </div>
-
-
 </body>
 </html>

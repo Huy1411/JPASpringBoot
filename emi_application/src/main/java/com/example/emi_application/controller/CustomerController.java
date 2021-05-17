@@ -10,7 +10,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
-
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
@@ -58,12 +57,18 @@ public class CustomerController {
         return "redirect:/?error=insert failed";
     }
 
-    @RequestMapping(path = "emi")
+    @RequestMapping(path = "/emi")
     public String getEmiByCust(@RequestParam("id")Long custId, Model model)
     {
         List<Emi> list = emiService.getEmiByCust(custId);
         model.addAttribute("listEmi",list);
 
         return "getEmiById";
+    }
+
+    @RequestMapping(path = "/detail")
+    public String detailCus(@RequestParam("id")Long id, Model model)
+    {
+        return "";
     }
 }

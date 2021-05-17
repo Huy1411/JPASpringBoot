@@ -1,30 +1,14 @@
 package com.example.enterprise_application.jpa.core;
 
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-
 import javax.persistence.*;
 
-
-@Getter
-@Setter
-@NoArgsConstructor
 @Entity
 @Table(name = "OrderItem")
 public class OrderItem {
-    @EmbeddedId
-    private OrderItemID id;
 
-    @ManyToOne
-    @MapsId("orderId")
-    @JoinColumn(name = "orderId")
-    private Order order;
-
-    @ManyToOne
-    @MapsId("productId")
-    @JoinColumn(name = "productId")
-    private ProductInformation product;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int orderItemId;
 
     @Column(name = "unitPrice")
     private Double unitPrice;
@@ -32,11 +16,51 @@ public class OrderItem {
     @Column(name = "\"qty\"")
     private int qty;
 
-    public OrderItem (Order order, ProductInformation product, Double unitPrice, int qty) {
-        this.id = new OrderItemID(order.getId(),product.getId());
-        this.order = order;
-        this.product = product;
+    @ManyToOne
+    @JoinColumn(name = "orderId", referencedColumnName = "orderId")
+    private Order order;
+
+    @ManyToOne
+    @JoinColumn(name = "productId", referencedColumnName = "productId")
+    private Product product;
+
+    public int getOrderItemId() {
+        return orderItemId;
+    }
+
+    public void setOrderItemId(int orderItemId) {
+        this.orderItemId = orderItemId;
+    }
+
+    public Double getUnitPrice() {
+        return unitPrice;
+    }
+
+    public void setUnitPrice(Double unitPrice) {
         this.unitPrice = unitPrice;
+    }
+
+    public int getQty() {
+        return qty;
+    }
+
+    public void setQty(int qty) {
         this.qty = qty;
+    }
+
+    public Order getOrder() {
+        return order;
+    }
+
+    public void setOrder(Order order) {
+        this.order = order;
+    }
+
+    public Product getProduct() {
+        return product;
+    }
+
+    public void setProduct(Product product) {
+        this.product = product;
     }
 }

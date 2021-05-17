@@ -19,16 +19,11 @@ public class Emi {
     private double team_of_the_loan;
     private double emi_total;
     private String status;
-
-
-
     @CreationTimestamp
     private Date createdAt;
     @UpdateTimestamp
     private Date updatedAt;
-
     private Date timeEnd;
-
     @ManyToOne
     @JoinColumn(name = "cust_id", referencedColumnName = "cust_id")
     private Customer customer;

@@ -46,8 +46,14 @@ public class EmiController {
         boolean bl = emiService.saveEmi(emi);
         if (bl)
         {
-            return "redirect:/?success=insert success";
+            return "redirect:/?success=insert success\"";
         }
         return "redirect:/emi?error=insert failed";
+    }
+
+    @RequestMapping(path = "/detail")
+    public String detailEmi(@RequestParam("id")Long id, Model model)
+    {
+        return "";
     }
 }

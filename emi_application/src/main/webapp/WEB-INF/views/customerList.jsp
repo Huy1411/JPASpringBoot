@@ -42,11 +42,12 @@
                         <td>${customer.fullName}</td>
                         <td>${customer.address}</td>
                         <td>${customer.phoneNumber}</td>
-                        <td>${customer.CCCD}</td>
+                        <td>${customer.identification}</td>
                         <td>${customer.amount}</td>
                         <td>
                             <a class="btn btn-primary" href="<%=request.getContextPath()%>/customer/edit?id=${customer.cust_id}">EDIT</a>
                             <a class="btn btn-danger" href="<%=request.getContextPath()%>/customer/delete?id=${customer.cust_id}">DELETE</a>
+                            <a class="btn btn-primary" href="<%=request.getContextPath()%>/customer/detail?id=${customer.cust_id}">DETAIL</a>
                             <a class="btn btn-primary" href="<%=request.getContextPath()%>/emi?id=${customer.cust_id}">EMI</a>
                         </td>
                     </tr>
