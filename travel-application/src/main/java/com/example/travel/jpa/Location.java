@@ -10,7 +10,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Entity
-@EqualsAndHashCode(exclude = {"image","author","publisher"})
+@EqualsAndHashCode(exclude = {"image", "comment", "user"})
 public class Location {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,7 +23,7 @@ public class Location {
 
     private String locationInfo;
 
-    @Min(value = 1,message = "Please chose a status")
+    @Min(value = 1, message = "Please chose a status")
     private int status;
 
     @OneToMany(mappedBy = "image", cascade = CascadeType.ALL, orphanRemoval = true)
@@ -34,4 +34,86 @@ public class Location {
     @JsonIgnoreProperties("locations")
     private Set<Comment> comments = new HashSet<>();
 
+    @ManyToOne
+    @JoinColumn(name = "userId")
+    @JsonIgnoreProperties("locations")
+    private User user;
+
+    public Location() {
+    }
+
+    public Location(int locationId, @NotNull String locationName, String locationAddress, String locationInfo, @Min(value = 1, message = "Please chose a status") int status, Set<Image> images, Set<Comment> comments, User user) {
+        this.locationId = locationId;
+        this.locationName = locationName;
+        this.locationAddress = locationAddress;
+        this.locationInfo = locationInfo;
+        this.status = status;
+        this.images = images;
+        this.comments = comments;
+        this.user = user;
+    }
+
+    public int getLocationId() {
+        return locationId;
+    }
+
+    public void setLocationId(int locationId) {
+        this.locationId = locationId;
+    }
+
+    public String getLocationName() {
+        return locationName;
+    }
+
+    public void setLocationName(String locationName) {
+        this.locationName = locationName;
+    }
+
+    public String getLocationAddress() {
+        return locationAddress;
+    }
+
+    public void setLocationAddress(String locationAddress) {
+        this.locationAddress = locationAddress;
+    }
+
+    public String getLocationInfo() {
+        return locationInfo;
+    }
+
+    public void setLocationInfo(String locationInfo) {
+        this.locationInfo = locationInfo;
+    }
+
+    public int getStatus() {
+        return status;
+    }
+
+    public void setStatus(int status) {
+        this.status = status;
+    }
+
+    public Set<Image> getImages() {
+        return images;
+    }
+
+    public void setImages(Set<Image> images) {
+        this.images = images;
+    }
+
+    public Set<Comment> getComments() {
+        return comments;
+    }
+
+    public void setComments(Set<Comment> comments) {
+        this.comments = comments;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
 }
