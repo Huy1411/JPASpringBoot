@@ -10,6 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import javax.transaction.Transactional;
 import javax.validation.Valid;
 import java.net.URI;
 import java.util.Optional;
@@ -67,9 +68,14 @@ public class LibraryController {
         if(!optionalLibrary.isPresent()){
             return ResponseEntity.unprocessableEntity().build();
         }
-        libraryRepository.delete(optionalLibrary.get());
+//        libraryRepository.delete(optionalLibrary.get());
+        deleteByLibraryCustomTransactional(optionalLibrary.get());
         return ResponseEntity.noContent().build();
+    }
 
-
-}
+    @Transactional
+    public void deleteByLibraryCustomTransactional(Library library){
+        libraryRepository.deleteByLibrary(library.getId());
+        libraryRepository.delete(library);
+    }
 }

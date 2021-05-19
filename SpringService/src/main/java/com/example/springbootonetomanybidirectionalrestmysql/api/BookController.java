@@ -41,6 +41,15 @@ public class BookController {
         }
         return ResponseEntity.ok(optionalBook.get());
     }
+
+    //GetBook by id customer from LibraryRepository
+//    @GetMapping("/library/{library_id}")
+////    public ResponseEntity<Page<Book>> getLibraryId(@PathVariable Integer library_id, Pageable pageable){
+////        return ResponseEntity.ok(libraryRepository.findByLibraryId(library_id, pageable));
+////    }
+
+
+
     @PostMapping
     public ResponseEntity<Book> create(@Valid @RequestBody Book book){
         Optional<Library> optionalLibrary = libraryRepository.findById(book.getLibrary().getId());
@@ -55,6 +64,7 @@ public class BookController {
             .buildAndExpand(bookSaved.getId()).toUri();
         return ResponseEntity.created(location).body(bookSaved);
     }
+
     @PutMapping("/{id}")
     public ResponseEntity<Book> update(@PathVariable Integer id, @Valid @RequestBody Book book){
         Optional<Library> optionalLibrary = libraryRepository.findById(book.getLibrary().getId());

@@ -12,7 +12,6 @@ import java.util.Optional;
 @Service
 public class ProductService {
     private final ProductRepository productRepository;
-
     public List<Product> findAllProduct(){
         return productRepository.findAll();
     }

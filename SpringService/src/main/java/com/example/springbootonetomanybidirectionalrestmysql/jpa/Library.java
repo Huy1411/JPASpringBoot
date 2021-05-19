@@ -15,7 +15,8 @@ public class Library {
     @NotNull
     private String name;
 
-    @OneToMany(mappedBy = "library", cascade = CascadeType.ALL)
+    // @OneToMany(mappedBy = "library", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "library", cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     private Set<Book> books = new HashSet<>();
 
     public Set<Book> getBooks() {
