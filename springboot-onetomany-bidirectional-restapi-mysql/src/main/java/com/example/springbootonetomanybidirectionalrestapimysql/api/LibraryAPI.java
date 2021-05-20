@@ -68,8 +68,7 @@ public class LibraryAPI {
      }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Library> deleteLibrary(@PathVariable int id,
-                                                 @Valid @RequestBody Library library){
+    public ResponseEntity<Library> deleteLibrary(@PathVariable int id){
         Optional<Library> optionalLibrary= libraryRepository.findById(id);
 
         if(!optionalLibrary.isPresent()){

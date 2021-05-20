@@ -9,7 +9,7 @@ import java.util.List;
 public interface LocationService {
     List<Location> listLocations();
     List<Location> getLocationsByStatus(int status);
-    List<Location> getLocationsByUser(int userId);
+//    List<Location> getLocationsByUser(int userId);
     Location getLocationById(int locationId);
     boolean saveLocation(Location location);
     boolean deleteLocation(int locationId);

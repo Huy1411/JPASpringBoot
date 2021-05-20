@@ -34,14 +34,14 @@ public class User {
     @JsonIgnoreProperties("users")
     private Set<UserRole> userRoles = new HashSet<>();
 
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
-    @JsonIgnoreProperties("user")
-    private Set<Location> locations = new HashSet<>();
+//    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+//    @JsonIgnoreProperties("user")
+//    private Set<Location> locations = new HashSet<>();
 
     public User() {
     }
 
-    public User(int userID, @NotNull String userName, @NotNull String password, @NotNull String email, String phone, @Min(value = 1, message = "Please chose a status") int status, Set<UserRole> userRoles, Set<Location> locations) {
+    public User(int userID, @NotNull String userName, @NotNull String password, @NotNull String email, String phone, @Min(value = 1, message = "Please chose a status") int status, Set<UserRole> userRoles) {
         this.userID = userID;
         this.userName = userName;
         this.password = password;
@@ -49,7 +49,7 @@ public class User {
         this.phone = phone;
         this.status = status;
         this.userRoles = userRoles;
-        this.locations = locations;
+//        this.locations = locations;
     }
 
     public int getStatus() {
@@ -108,11 +108,11 @@ public class User {
         this.userRoles = userRoles;
     }
 
-    public Set<Location> getLocations() {
-        return locations;
-    }
-
-    public void setLocations(Set<Location> locations) {
-        this.locations = locations;
-    }
+//    public Set<Location> getLocations() {
+//        return locations;
+//    }
+//
+//    public void setLocations(Set<Location> locations) {
+//        this.locations = locations;
+//    }
 }

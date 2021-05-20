@@ -34,15 +34,15 @@ public class Location {
     @JsonIgnoreProperties("locations")
     private Set<Comment> comments = new HashSet<>();
 
-    @ManyToOne
-    @JoinColumn(name = "userId")
-    @JsonIgnoreProperties("locations")
-    private User user;
+//    @ManyToOne
+//    @JoinColumn(name = "userId")
+//    @JsonIgnoreProperties("locations")
+//    private User user;
 
     public Location() {
     }
 
-    public Location(int locationId, @NotNull String locationName, String locationAddress, String locationInfo, @Min(value = 1, message = "Please chose a status") int status, Set<Image> images, Set<Comment> comments, User user) {
+    public Location(int locationId, @NotNull String locationName, String locationAddress, String locationInfo, @Min(value = 1, message = "Please chose a status") int status, Set<Image> images, Set<Comment> comments) {
         this.locationId = locationId;
         this.locationName = locationName;
         this.locationAddress = locationAddress;
@@ -50,7 +50,7 @@ public class Location {
         this.status = status;
         this.images = images;
         this.comments = comments;
-        this.user = user;
+
     }
 
     public int getLocationId() {
@@ -107,13 +107,5 @@ public class Location {
 
     public void setComments(Set<Comment> comments) {
         this.comments = comments;
-    }
-
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
     }
 }

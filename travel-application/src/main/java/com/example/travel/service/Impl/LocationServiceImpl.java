@@ -43,17 +43,17 @@ public class LocationServiceImpl implements LocationService {
         return null;
     }
 
-    @Override
-    public List<Location> getLocationsByUser(int userId) {
-        try{
-            List<Location> locations = locationRepository.findLocationsByUser(userId);
-            return locations;
-        }catch (Exception e)
-        {
-            e.printStackTrace();
-        }
-        return null;
-    }
+//    @Override
+//    public List<Location> getLocationsByUser(int userId) {
+//        try{
+//            List<Location> locations = locationRepository.findLocationsByUser(userId);
+//            return locations;
+//        }catch (Exception e)
+//        {
+//            e.printStackTrace();
+//        }
+//        return null;
+//    }
 
     @Override
     public Location getLocationById(int locationId) {
