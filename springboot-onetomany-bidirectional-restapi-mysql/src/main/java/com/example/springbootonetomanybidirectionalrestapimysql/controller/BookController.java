@@ -66,7 +66,7 @@ public class BookController {
     }
 
     @RequestMapping(value = "/saveBook",method = RequestMethod.POST)
-    public String savePro(@ModelAttribute("bookNew")@Valid Book book, BindingResult result,Model model)throws IOException
+    public String saveBook(@ModelAttribute("bookNew")@Valid Book book, BindingResult result,Model model)throws IOException
     {
         if (result.hasErrors())
         {
@@ -124,7 +124,7 @@ public class BookController {
     }
 
     @RequestMapping(value = "/deleteBook")
-    public String deleteProduct(@RequestParam("id")Integer id)
+    public String deleteBook(@RequestParam("id")Integer id)
     {
         boolean bl = bookService.deleteBook(id);
         if (bl)

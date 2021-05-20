@@ -26,11 +26,11 @@ public class Location {
     @Min(value = 1, message = "Please chose a status")
     private int status;
 
-    @OneToMany(mappedBy = "image", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "location", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonIgnoreProperties("locations")
     private Set<Image> images = new HashSet<>();
 
-    @OneToMany(mappedBy = "comment", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "location", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonIgnoreProperties("locations")
     private Set<Comment> comments = new HashSet<>();
 

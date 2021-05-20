@@ -27,10 +27,6 @@ public class Comment {
     @Min(value = 1, message = "Please chose a status")
     private int status;
 
-    @Min(value = 1)
-    @Max(value = 5)
-    private int rating;
-
     @ManyToOne
     @JoinColumn(name = "locationId")
     @JsonIgnoreProperties("comments")
@@ -41,17 +37,15 @@ public class Comment {
     @JsonIgnoreProperties("comments")
     private Customer customer;
 
-
     public Comment() {
     }
 
-    public Comment(int commentId, String commentName, String commentInfo, Date commentDate, @Min(value = 1, message = "Please chose a status") int status, @Min(value = 1) @Max(value = 5) int rating, Location location, Customer customer) {
+    public Comment(int commentId, String commentName, String commentInfo, Date commentDate, @Min(value = 1, message = "Please chose a status") int status, Location location, Customer customer) {
         this.commentId = commentId;
         this.commentName = commentName;
         this.commentInfo = commentInfo;
         this.commentDate = commentDate;
         this.status = status;
-        this.rating = rating;
         this.location = location;
         this.customer = customer;
     }
@@ -94,14 +88,6 @@ public class Comment {
 
     public void setStatus(int status) {
         this.status = status;
-    }
-
-    public int getRating() {
-        return rating;
-    }
-
-    public void setRating(int rating) {
-        this.rating = rating;
     }
 
     public Location getLocation() {

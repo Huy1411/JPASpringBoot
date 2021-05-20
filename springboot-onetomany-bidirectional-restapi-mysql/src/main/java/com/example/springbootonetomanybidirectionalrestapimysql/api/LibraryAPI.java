@@ -25,7 +25,6 @@ public class LibraryAPI {
         this.libraryRepository = libraryRepository;
         this.bookRepository = bookRepository;
     }
-
     @GetMapping //read data
     public ResponseEntity<Page<Library>> getAll(Pageable pageable)
      {

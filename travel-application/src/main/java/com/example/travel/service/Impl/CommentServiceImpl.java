@@ -138,8 +138,8 @@ public class CommentServiceImpl implements CommentService {
     }
 
     @Override
-    public boolean checkCommentName(String commentName, int locationId) {
-        Comment comment = commentRepository.findByCommentName(commentName,locationId);
+    public boolean checkCommentName(String commentName, int locationId, int customerId) {
+        Comment comment = commentRepository.findByCommentName(commentName,locationId, customerId);
         if (comment==null)
         {
             return true;

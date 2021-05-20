@@ -31,7 +31,7 @@ public interface CommentRepository extends JpaRepository<Comment, Integer> {
     @Query("SELECT p FROM Comment p WHERE status = 2 ")
     Page<Comment> findPaginateCommentsStatusHidden(Pageable pageable);
 
-    @Query("SELECT p FROM Comment p WHERE commentName = ?1 AND locationId = ?2")
-    Comment findByCommentName(String commentName,int locationId);
+    @Query("SELECT p FROM Comment p WHERE commentName = ?1 AND locationId = ?2 AND customerId= ?3")
+    Comment findByCommentName(String commentName,int locationId, int customerId);
 
 }

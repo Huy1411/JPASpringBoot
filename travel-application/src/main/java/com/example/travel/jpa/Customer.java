@@ -26,7 +26,7 @@ public class Customer {
     @Min(value = 1,message = "Please chose a status")
     private int status;
 
-    @OneToMany(mappedBy = "comment", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonIgnoreProperties("customers")
     private Set<Comment> comments = new HashSet<>();
 

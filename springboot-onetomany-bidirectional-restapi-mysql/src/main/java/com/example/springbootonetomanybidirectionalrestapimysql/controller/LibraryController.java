@@ -33,7 +33,6 @@ public class LibraryController {
     public String getLibraries(Model model)
     {
         Library library = new Library();
-
         return findPaginatedLib(1,model,library);
     }
 

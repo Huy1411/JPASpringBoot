@@ -51,7 +51,6 @@
                                         <a href="${pageContext.request.contextPath}/admin/book/hidden"
                                            class="btn btn-block btn-danger">Hidden</a>
                                     </div>
-
                                 </div>
                             </div>
                         </div>
