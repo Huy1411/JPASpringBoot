@@ -43,7 +43,7 @@ public class ImageAPI {
     }
 
     @PostMapping
-    public ResponseEntity<Image> insertImage(@Valid @RequestBody Image image) {
+    public ResponseEntity<Image> createImage(@Valid @RequestBody Image image) {
         Optional<Location> optionalLocation = locationRepository.findById(image.getLocation().getLocationId());
         if (!optionalLocation.isPresent()) {
             return ResponseEntity.unprocessableEntity().build();
@@ -73,6 +73,7 @@ public class ImageAPI {
         if (!optionalImage.isPresent()) {
             return ResponseEntity.unprocessableEntity().build();
         }
+
         image.setLocation(optionalLocation.get());
         image.setImageId(optionalImage.get().getImageId());
         imageRepository.save(image);

@@ -26,20 +26,16 @@ public class Customer {
     @Min(value = 1,message = "Please chose a status")
     private int status;
 
-    @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL, orphanRemoval = true)
-    @JsonIgnoreProperties("customers")
-    private Set<Comment> comments = new HashSet<>();
 
     public Customer() {
     }
 
-    public Customer(int customerId, @NotNull String customerName, String email, String phone, @Min(value = 1, message = "Please chose a status") int status, Set<Comment> comments) {
+    public Customer(int customerId, @NotNull String customerName, String email, String phone, @Min(value = 1, message = "Please chose a status") int status) {
         this.customerId = customerId;
         this.customerName = customerName;
         this.email = email;
         this.phone = phone;
         this.status = status;
-        this.comments = comments;
     }
 
     public int getCustomerId() {
@@ -82,11 +78,4 @@ public class Customer {
         this.status = status;
     }
 
-    public Set<Comment> getComments() {
-        return comments;
-    }
-
-    public void setComments(Set<Comment> comments) {
-        this.comments = comments;
-    }
 }

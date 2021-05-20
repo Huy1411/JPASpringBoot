@@ -1,6 +1,7 @@
 package com.example.travel.jpa;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.EqualsAndHashCode;
 
 import javax.persistence.*;
@@ -27,14 +28,16 @@ public class Comment {
     @Min(value = 1, message = "Please chose a status")
     private int status;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "locationId")
     @JsonIgnoreProperties("comments")
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private Location location;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "customerId")
     @JsonIgnoreProperties("comments")
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private Customer customer;
 
     public Comment() {

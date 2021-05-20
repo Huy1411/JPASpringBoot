@@ -80,6 +80,8 @@ public class BookController {
         bookRepository.save(book);
         return ResponseEntity.noContent().build();
     }
+
+
     @DeleteMapping
     public ResponseEntity<Book> delete(@PathVariable Integer id){
         Optional<Book> optionalBook = bookRepository.findById(id);

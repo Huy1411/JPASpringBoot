@@ -26,13 +26,13 @@ public class Location {
     @Min(value = 1, message = "Please chose a status")
     private int status;
 
-    @OneToMany(mappedBy = "location", cascade = CascadeType.ALL, orphanRemoval = true)
-    @JsonIgnoreProperties("locations")
-    private Set<Image> images = new HashSet<>();
-
-    @OneToMany(mappedBy = "location", cascade = CascadeType.ALL, orphanRemoval = true)
-    @JsonIgnoreProperties("locations")
-    private Set<Comment> comments = new HashSet<>();
+//    @OneToMany(mappedBy = "location", cascade = CascadeType.ALL, orphanRemoval = true)
+//    @JsonIgnoreProperties("locations")
+//    private Set<Image> images = new HashSet<>();
+//
+//    @OneToMany(mappedBy = "location", cascade = CascadeType.ALL, orphanRemoval = true)
+//    @JsonIgnoreProperties("locations")
+//    private Set<Comment> comments = new HashSet<>();
 
 //    @ManyToOne
 //    @JoinColumn(name = "userId")
@@ -42,14 +42,14 @@ public class Location {
     public Location() {
     }
 
-    public Location(int locationId, @NotNull String locationName, String locationAddress, String locationInfo, @Min(value = 1, message = "Please chose a status") int status, Set<Image> images, Set<Comment> comments) {
+    public Location(int locationId, @NotNull String locationName, String locationAddress, String locationInfo, @Min(value = 1, message = "Please chose a status") int status) {
         this.locationId = locationId;
         this.locationName = locationName;
         this.locationAddress = locationAddress;
         this.locationInfo = locationInfo;
         this.status = status;
-        this.images = images;
-        this.comments = comments;
+//        this.images = images;
+//        this.comments = comments;
 
     }
 
@@ -92,20 +92,20 @@ public class Location {
     public void setStatus(int status) {
         this.status = status;
     }
-
-    public Set<Image> getImages() {
-        return images;
-    }
-
-    public void setImages(Set<Image> images) {
-        this.images = images;
-    }
-
-    public Set<Comment> getComments() {
-        return comments;
-    }
-
-    public void setComments(Set<Comment> comments) {
-        this.comments = comments;
-    }
+//
+//    public Set<Image> getImages() {
+//        return images;
+//    }
+//
+//    public void setImages(Set<Image> images) {
+//        this.images = images;
+//    }
+//
+//    public Set<Comment> getComments() {
+//        return comments;
+//    }
+//
+//    public void setComments(Set<Comment> comments) {
+//        this.comments = comments;
+//    }
 }

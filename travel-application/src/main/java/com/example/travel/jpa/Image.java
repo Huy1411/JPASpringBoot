@@ -1,6 +1,7 @@
 package com.example.travel.jpa;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.EqualsAndHashCode;
 
 import javax.persistence.*;
@@ -23,9 +24,10 @@ public class Image {
     @Min(value = 1,message = "Please chose a status")
     private int status;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "locationId")
     @JsonIgnoreProperties("images")
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private Location location;
 
 
