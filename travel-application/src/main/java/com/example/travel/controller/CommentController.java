@@ -47,13 +47,13 @@ public class CommentController {
     }
 
     @RequestMapping("show")
-    public String getBookShow(Model model) {
+    public String getCommentShow(Model model) {
         Comment comment = new Comment();
         return findPagShow(1, model, comment);
     }
 
     @RequestMapping("hidden")
-    public String getBookHidden(Model model) {
+    public String getCommentHidden(Model model) {
         Comment comment = new Comment();
         return findPagHidden(1, model, comment);
     }

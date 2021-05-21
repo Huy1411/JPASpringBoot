@@ -17,5 +17,5 @@ public interface LocationService {
     Page<Location> findPaginated(int pageNo, int pageSize);
     Page<Location> findPaginatedShow(int pageNo,int pageSize);
     Page<Location> findPaginatedHidden(int pageNo,int pageSize);
-    boolean checkLocationName(String locationName,int userId);
+    boolean checkLocationName(String locationName);
 }

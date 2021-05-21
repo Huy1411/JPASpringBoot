@@ -125,8 +125,8 @@ public class LocationServiceImpl implements LocationService {
     }
 
     @Override
-    public boolean checkLocationName(String locationName, int userId) {
-        Location location = locationRepository.findByLocationName(locationName,userId);
+    public boolean checkLocationName(String locationName) {
+        Location location = locationRepository.findByLocationName(locationName);
         if (location==null)
         {
             return true;

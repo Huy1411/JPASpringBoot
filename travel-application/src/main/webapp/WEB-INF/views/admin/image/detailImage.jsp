@@ -9,12 +9,12 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>Comment Manager</h1>
+                    <h1>Image Manager</h1>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a>Home</a></li>
-                        <li class="breadcrumb-item active">Comment Manager</li>
+                        <li class="breadcrumb-item active">Image Manager</li>
                     </ol>
                 </div>
             </div>
@@ -25,7 +25,7 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <h3 class="card-title">Detail Comment</h3>
+                        <h3 class="card-title">Detail Image</h3>
 
                         <div class="card-tools">
                             <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip"
@@ -39,45 +39,40 @@
                     <div class="card-body" style="display: block;">
                         <div class="row">
                             <div class="col-12 col-md-12 col-lg-8 order-2 order-md-1">
-
                                 <div class="row">
                                     <div class="col-12">
-                                        <h4>Comment Detail </h4>
+                                        <h4>Image Detail </h4>
                                         <div class="post">
                                             <div class="user-block">
                                                 <table class="table">
                                                     <tr>
                                                         <td>ID</td>
-                                                        <td>${detailComment.commentId}</td>
+                                                        <td>${detailImage.imageId}</td>
                                                     </tr>
                                                     <tr>
-                                                        <td>Comment Name</td>
-                                                        <td>${detailComment.commentName}</td>
+                                                        <td>Image Name</td>
+                                                        <td>${detailImage.imageName}</td>
                                                     </tr>
                                                     <tr>
-                                                        <td>Comment Infomation</td>
-                                                        <td>${detailComment.commentInfo}</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Comment Date</td>
-                                                        <td>${detailComment.commentDate}</td>
+                                                        <td>Image URL</td>
+                                                        <td>${detailImage.imageURL}</td>
                                                     </tr>
                                                     <tr>
                                                         <td>Status </td>
-                                                        <td><c:if test="${detailComment.status ==1}">
+                                                        <td><c:if test="${detailImage.status ==1}">
                                                             <span class="badge badge-success">Show</span>
                                                         </c:if>
-                                                            <c:if test="${detailComment.status ==2}">
+                                                            <c:if test="${detailImage.status ==2}">
                                                                 <span class="badge badge-danger">Hidden</span>
                                                             </c:if>
                                                         </td>
                                                     </tr>
                                                     <tr>
                                                         <td>Location</td>
-                                                        <td>${detailComment.location.locationName}</td>
+                                                        <td>${detailImage.location.locationName}</td>
                                                     </tr>
                                                 </table>
-                                                <a href="${pageContext.request.contextPath}/admin/comments/editComment?id=${detailComment.commentId}"
+                                                <a href="${pageContext.request.contextPath}/admin/images/editImage?id=${detailImage.imageId}"
                                                    class="btn btn-sm btn-info">Update </a>
                                             </div>
                                         </div>

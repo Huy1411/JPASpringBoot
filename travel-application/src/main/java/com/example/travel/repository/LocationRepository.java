@@ -29,6 +29,6 @@ public interface LocationRepository extends JpaRepository<Location, Integer> {
     Page<Location> findPaginateLocationsStatusHidden(Pageable pageable);
 
     @Query("SELECT p FROM Location p WHERE locationName = ?1 AND userId = ?2")
-    Location findByLocationName(String locationName, int userId);
+    Location findByLocationName(String locationName);
 }
 

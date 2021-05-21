@@ -1,11 +1,7 @@
 package com.example.travel.controller;
 
-import com.example.travel.jpa.Comment;
 import com.example.travel.jpa.Customer;
-import com.example.travel.jpa.Location;
-import com.example.travel.service.CommentService;
 import com.example.travel.service.CustomerService;
-import com.example.travel.service.LocationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.data.domain.Page;

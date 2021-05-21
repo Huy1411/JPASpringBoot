@@ -7,7 +7,7 @@
 
 <div class="container-fluid">
     <!-- Page Heading -->
-    <h1>Comment Manager</h1>
+    <h1>Customer Manager</h1>
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
         <div class="row">
@@ -18,15 +18,15 @@
                         <div class="col-md-12" style="margin-top: 10px;margin-bottom: 10px;">
                             <div class="row">
                                 <div class="col-md-4 col-sm-4 col-4">
-                                    <a href="${pageContext.request.contextPath}/admin/comments"
+                                    <a href="${pageContext.request.contextPath}/admin/locations"
                                        class="btn btn-block btn-primary">All</a>
                                 </div>
                                 <div class="col-md-4 col-sm-4 col-4">
-                                    <a href="${pageContext.request.contextPath}/admin/comments/show"
+                                    <a href="${pageContext.request.contextPath}/admin/locations/show"
                                        class="btn btn-block btn-success">Show</a>
                                 </div>
                                 <div class="col-md-4 col-sm-4 col-4">
-                                    <a href="${pageContext.request.contextPath}/admin/comments/hidden"
+                                    <a href="${pageContext.request.contextPath}/admin/locations/hidden"
                                        class="btn btn-block btn-danger">Hidden</a>
                                 </div>
                             </div>
@@ -39,8 +39,8 @@
             <div class="col-12">
                 <div class="col-3">
                     <a class="btn btn-block btn-info btn-sm"
-                       href="${pageContext.request.contextPath}/admin/comments/insertComment">Create
-                        Comment</a>
+                       href="${pageContext.request.contextPath}/admin/locations/insertLocation">Create
+                        Location</a>
                 </div>
             </div>
         </div>
@@ -52,41 +52,38 @@
                         <thead>
                         <tr>
                             <th style="width: 10px">No.</th>
-                            <th>Comment Name</th>
-                            <th>Comment Info</th>
-                            <th>Date</th>
+                            <th>Location Name</th>
+                            <th>Location Address</th>
+                            <th>Location Infomation</th>
                             <th>Status</th>
-                            <th>Location</th>
-                            <th>Customer</th>
                             <th>Actions</th>
                         </tr>
                         </thead>
                         <tbody>
-                        <c:forEach items="${comments}" var="comment" varStatus="itr">
+                        <c:forEach items="${locations}" var="location" varStatus="itr">
                             <tr>
                                 <td>${offset+itr.index+1}</td>
-                                <td><span class="text-bold"> ${comment.commentName}</span></td>
-                                <td><span class="text-bold"> ${comment.commentInfo}</span></td>
-                                <td><span class="text-bold"> ${comment.commentDate}</span></td>
+                                <td><span class="text-bold"> ${location.locationName}</span></td>
+                                <td><span class="text-bold"> ${location.locationAddress}</span></td>
+                                <td><span class="text-bold"> ${location.locationInfo}</span></td>
                                 <td>
-                                    <c:if test="${comment.status ==1}">
+                                    <c:if test="${location.status ==1}">
                                         <span class="text-bold"> </span><span
                                         class="badge badge-success">Show</span>
                                     </c:if>
-                                    <c:if test="${comment.status ==2}">
+                                    <c:if test="${location.status ==2}">
                                         <span class="text-bold"> </span><span
                                         class="badge badge-danger">Hidden</span>
                                     </c:if>
                                 </td>
-                                <td>${comment.location.locationName}</td>
-                                <td>${comment.customer.customerName}</td>
                                 <td class="project-actions ">
-                                    <a href="${pageContext.request.contextPath}/admin/comments/editComment?id=${comment.commentId}"
+                                    <a href="${pageContext.request.contextPath}/admin/locations/editLocation?id=${location.locationId}"
                                        class="btn  btn-info btn-sm"><i class="fas fa-pencil-alt"> </i>Update</a>
-                                    <a href="${pageContext.request.contextPath}/admin/comments/deleteComment?id=${comment.commentId}"
+                                    <a href="${pageContext.request.contextPath}/admin/locations/detailLocation?id=${location.locationId}"
                                        class="btn btn-danger btn-sm"><i class="fas fa-trash"></i> Delete</a>
-                                    <a href="${pageContext.request.contextPath}/admin/comments/detailComment?id=${comment.commentId}"
-                                       class="btn btn-primary btn-sm"><i class="fas fa-folder"> </i>Detail</a>
+                                    <a href="${pageContext.request.contextPath}/admin/locations/detailLocation?id=${location.locationId}"
+                                       class="btn btn-primary btn-sm"><i
+                                        class="fas fa-folder"> </i>Detail</a>
                                 </td>
                             </tr>
                         </c:forEach>
