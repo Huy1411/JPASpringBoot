@@ -12,14 +12,15 @@
             </div>
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
-                    <li class="breadcrumb-item"><a >Home</a></li>
+                    <li class="breadcrumb-item"><a>Home</a></li>
                     <li class="breadcrumb-item active">Book Manager</li>
                 </ol>
             </div>
         </div>
     </div><!-- /.container-fluid -->
 </section>
-<f:form action="${pageContext.request.contextPath}/admin/book/updateBook" method="POST" enctype="multipart/form-data" modelAttribute="bookEdit">
+<f:form action="${pageContext.request.contextPath}/admin/book/updateBook" method="POST" enctype="multipart/form-data"
+        modelAttribute="bookEdit">
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-10">
