@@ -91,7 +91,7 @@ public class CommentController {
         boolean bl = commentService.saveComment(comment);
         if(bl)
         {
-            return "redirect:/admin/comment/";
+            return "redirect:/admin/comments/";
         }
         return "redirect:/admin/comment?error=Add New Comment error";
     }
@@ -116,7 +116,7 @@ public class CommentController {
         }
         boolean bl = commentService.updateComment(comment);
         if (bl) {
-            return "redirect:/admin/comment/";
+            return "redirect:/admin/comments/";
         }
         return "redirect:/admin/comment?error=Update Comment Error";
 

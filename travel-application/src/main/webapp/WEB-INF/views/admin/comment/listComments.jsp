@@ -7,24 +7,12 @@
 
 <div class="container-fluid">
     <!-- Page Heading -->
-    <h1 class="h3 mb-2 text-gray-800">Comment Manager</h1>
+    <h1>Comment Manager</h1>
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
         <div class="row">
             <div class="col-md-12">
                 <div class="card card-warning collapsed-card">
-                    <div class="card-header">
-                        <h3 class="card-title">Look Up Comment
-                        <div class="card-tools">
-                            <button type="button" class="btn btn-tool" data-card-widget="collapse"><i
-                                class="fas fa-plus"></i>
-                            </button>
-                            <button type="button" class="btn btn-tool" data-card-widget="remove"><i
-                                class="fas fa-times"></i>
-                            </button>
-                        </h3>
-                        </div>
-                    </div>
                     <!-- /.card-header -->
                     <div class="card-body" style="display: flex; color: #FFF">
                         <div class="col-md-12" style="margin-top: 10px;margin-bottom: 10px;">
@@ -44,19 +32,19 @@
                             </div>
                         </div>
                     </div>
-                    <!-- /.card-footer-->
-                </div>
-            </div>
-            <div class="col-12">
-                <div class="row">
-                    <div class="col-3">
-                        <a class="btn btn-block btn-info btn-sm"
-                           href="${pageContext.request.contextPath}/admin/comments/insertComment">Create
-                            Book</a>
-                    </div>
                 </div>
             </div>
         </div>
+        <div class="row" style="margin: 20px">
+            <div class="col-12">
+                <div class="col-3">
+                    <a class="btn btn-block btn-info btn-sm"
+                       href="${pageContext.request.contextPath}/admin/comments/insertComment">Create
+                        Comment</a>
+                </div>
+            </div>
+        </div>
+
         <div class="row">
             <div class="card-body">
                 <div class="table-responsive">

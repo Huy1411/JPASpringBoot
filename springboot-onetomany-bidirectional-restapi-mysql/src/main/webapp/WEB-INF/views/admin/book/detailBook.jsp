@@ -55,8 +55,8 @@
                                                     <tr>
                                                         <td>Status:</td>
                                                         <td> <c:if test="${bookDetail.status ==1}">
-                                                                <span class="badge badge-success">Show</span>
-                                                            </c:if>
+                                                            <span class="badge badge-success">Show</span>
+                                                        </c:if>
                                                             <c:if test="${bookDetail.status !=1}">
                                                                 <span class="badge badge-danger">Hidden</span>
                                                             </c:if>
@@ -73,36 +73,36 @@
                                     </div>
                                 </div>
                             </div>
-<%--                            <div class="col-12 col-md-8 col-lg-4 order-1 order-md-2">--%>
-<%--                                <div class="card card-warning collapsed-card" style="transition: all 0.15s ease 0s; height: inherit; width: inherit;">--%>
-<%--                                    <div class="card-header">--%>
-<%--                                        <h3 class="card-title "><i class="fas fa-paint-brush"></i>Product Image</h3>--%>
+                            <%--                            <div class="col-12 col-md-8 col-lg-4 order-1 order-md-2">--%>
+                            <%--                                <div class="card card-warning collapsed-card" style="transition: all 0.15s ease 0s; height: inherit; width: inherit;">--%>
+                            <%--                                    <div class="card-header">--%>
+                            <%--                                        <h3 class="card-title "><i class="fas fa-paint-brush"></i>Product Image</h3>--%>
 
-<%--                                        <div class="card-tools">--%>
-<%--                                            <!--<button type="button" class="btn btn-tool" data-card-widget="card-refresh" data-source="widgets.html" data-source-selector="#card-refresh-content" data-load-on-init="false"><i class="fas fa-sync-alt"></i></button>-->--%>
-<%--                                            <button type="button" class="btn btn-tool" data-card-widget="maximize"><i class="fas fa-expand"></i></button>--%>
-<%--                                            <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i></button>--%>
-<%--                                            <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button>--%>
-<%--                                        </div>--%>
-<%--                                    </div>--%>
-<%--                                    <div class="card-body" style="display: block;">--%>
-<%--                                       Image--%>
-<%--                                    </div>--%>
-<%--                                    <div class="card-body table-responsive p-0" style="height: 450px; display: block;">--%>
-<%--                                        <div class="col-md-12">--%>
-<%--                                            <div class="row">--%>
-<%--                                                <div class="col-sm-12">--%>
-<%--                                                    <a href="${proDetail.image}" data-toggle="lightbox" data-title="sample 1 - white" data-gallery="gallery">--%>
-<%--                                                        <img src="${proDetail.image}" class="img-fluid mb-2" alt="white sample">--%>
-<%--                                                    </a>--%>
-<%--                                                </div>--%>
+                            <%--                                        <div class="card-tools">--%>
+                            <%--                                            <!--<button type="button" class="btn btn-tool" data-card-widget="card-refresh" data-source="widgets.html" data-source-selector="#card-refresh-content" data-load-on-init="false"><i class="fas fa-sync-alt"></i></button>-->--%>
+                            <%--                                            <button type="button" class="btn btn-tool" data-card-widget="maximize"><i class="fas fa-expand"></i></button>--%>
+                            <%--                                            <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i></button>--%>
+                            <%--                                            <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button>--%>
+                            <%--                                        </div>--%>
+                            <%--                                    </div>--%>
+                            <%--                                    <div class="card-body" style="display: block;">--%>
+                            <%--                                       Image--%>
+                            <%--                                    </div>--%>
+                            <%--                                    <div class="card-body table-responsive p-0" style="height: 450px; display: block;">--%>
+                            <%--                                        <div class="col-md-12">--%>
+                            <%--                                            <div class="row">--%>
+                            <%--                                                <div class="col-sm-12">--%>
+                            <%--                                                    <a href="${proDetail.image}" data-toggle="lightbox" data-title="sample 1 - white" data-gallery="gallery">--%>
+                            <%--                                                        <img src="${proDetail.image}" class="img-fluid mb-2" alt="white sample">--%>
+                            <%--                                                    </a>--%>
+                            <%--                                                </div>--%>
 
-<%--                                            </div>--%>
-<%--                                        </div>--%>
-<%--                                    </div>--%>
+                            <%--                                            </div>--%>
+                            <%--                                        </div>--%>
+                            <%--                                    </div>--%>
 
-<%--                                </div>--%>
-<%--                            </div>--%>
+                            <%--                                </div>--%>
+                            <%--                            </div>--%>
                         </div>
                     </div>
                 </div>
