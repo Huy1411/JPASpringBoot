@@ -1,22 +1,25 @@
 package com.example.springservice.jpa;
-
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import lombok.EqualsAndHashCode;
+import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
 @Entity
+@EqualsAndHashCode(exclude = {"employee"})
 public class Employee {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+
+    @NotNull
     private String name;
-    private double salary;
+
+    private String salary;
 
     public Employee() {
     }
 
-    public Employee(String name, double salary) {
+    public Employee(int id, @NotNull String name, String salary) {
+        this.id = id;
         this.name = name;
         this.salary = salary;
     }
@@ -37,11 +40,11 @@ public class Employee {
         this.name = name;
     }
 
-    public double getSalary() {
+    public String getSalary() {
         return salary;
     }
 
-    public void setSalary(double salary) {
+    public void setSalary(String salary) {
         this.salary = salary;
     }
 }
